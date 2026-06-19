@@ -61,12 +61,11 @@
         }
 
         /* =========================================
-           --- SAMPUL (MENGIKUTI REFERENSI BARU) ---
+           --- SAMPUL ---
            ========================================= */
         #sampul {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100vh;
-            /* Latar belakang layar penuh dibuat kontras agar kartu menonjol */
             background: linear-gradient(135deg, #c3cdb4 0%, #e2e7d8 100%);
             background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
             display: flex;
@@ -93,109 +92,56 @@
             overflow: hidden;
         }
 
-        /* Garis putih frame melengkung seperti referensi */
         .inner-frame {
             position: absolute;
             top: 15px; bottom: 15px; left: 15px; right: 15px;
             border: 2px solid white;
-            border-radius: 120px 120px 15px 15px; /* Lengkungan klasik di atas */
+            border-radius: 120px 120px 15px 15px; 
             z-index: 5;
             pointer-events: none;
         }
 
         .monogram {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            font-family: 'Amiri', serif;
-            font-size: 45px;
-            color: var(--dark);
-            margin-bottom: 25px;
-            z-index: 15;
+            display: flex; align-items: center; justify-content: center;
+            gap: 15px; font-family: 'Amiri', serif; font-size: 45px;
+            color: var(--dark); margin-bottom: 25px; z-index: 15;
         }
-        
-        .monogram .vert-line {
-            width: 1px;
-            height: 45px;
-            background-color: var(--dark);
-        }
+        .monogram .vert-line { width: 1px; height: 45px; background-color: var(--dark); }
 
         .cover-card .sub-judul { 
-            letter-spacing: 3px; 
-            font-size: 11px; 
-            font-weight: 600; 
-            color: var(--dark); 
-            z-index: 15; 
-            margin-bottom: 5px;
+            letter-spacing: 3px; font-size: 11px; font-weight: 600; 
+            color: var(--dark); z-index: 15; margin-bottom: 5px;
         }
 
         .nama-cover { 
-            font-family: 'Great Vibes', cursive; 
-            font-size: 45px; /* --- PERBAIKAN: Ukuran dikecilkan agar tidak menabrak garis --- */
-            color: var(--dark); /* Disamakan gelap seperti referensi */
-            margin: 0 0 35px 0; 
-            z-index: 15;
-            font-weight: normal;
+            font-family: 'Great Vibes', cursive; font-size: 45px; 
+            color: var(--dark); margin: 0 0 35px 0; z-index: 15; font-weight: normal;
         }
 
-        .guest-section {
-            z-index: 15;
-            margin-bottom: 35px;
-        }
-        
-        .guest-section p { 
-            margin: 0 0 8px 0; 
-            font-size: 12px; 
-            color: var(--dark); 
-        }
-        
+        .guest-section { z-index: 15; margin-bottom: 35px; }
+        .guest-section p { margin: 0 0 8px 0; font-size: 12px; color: var(--dark); }
         .guest-section .nama-tamu-display { 
-            display: block; 
-            font-family: 'Amiri', serif;
-            font-size: 22px; 
-            font-weight: bold; 
-            color: var(--dark); 
+            display: block; font-family: 'Amiri', serif; font-size: 22px; 
+            font-weight: bold; color: var(--dark); 
         }
 
-        /* --- BUTTONS SAMPUL --- */
         .btn-buka-cover {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 28px;
-            background: linear-gradient(135deg, var(--dark), #2a2a2a);
-            color: white;
-            text-decoration: none;
-            border: 2px solid var(--gold); /* Frame emas di tombol */
-            border-radius: 30px;
-            font-size: 12px;
-            font-weight: bold;
-            cursor: pointer;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            z-index: 15;
-            animation: pulse 2s infinite;
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 12px 28px; background: linear-gradient(135deg, var(--dark), #2a2a2a);
+            color: white; text-decoration: none; border: 2px solid var(--gold); 
+            border-radius: 30px; font-size: 12px; font-weight: bold;
+            cursor: pointer; letter-spacing: 1px; transition: 0.3s;
+            z-index: 15; animation: pulse 2s infinite;
         }
 
         /* =========================================
            --- LANJUTAN ISI UNDANGAN BAWAAN ---
            ========================================= */
         .btn-aksi {
-            display: inline-block;
-            padding: 14px 35px;
-            background-color: var(--dark);
-            color: white;
-            text-decoration: none;
-            border: none;
-            border-radius: 30px;
-            font-size: 13px;
-            font-weight: bold;
-            cursor: pointer;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            position: relative;
-            z-index: 15;
+            display: inline-block; padding: 14px 35px; background-color: var(--dark);
+            color: white; text-decoration: none; border: none; border-radius: 30px;
+            font-size: 13px; font-weight: bold; cursor: pointer; letter-spacing: 1px;
+            transition: 0.3s; position: relative; z-index: 15;
         }
 
         @keyframes pulse {
@@ -204,114 +150,53 @@
             100% { transform: scale(1); }
         }
 
-        #isi-undangan {
-            display: none;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        #isi-undangan { display: none; max-width: 600px; margin: 0 auto; }
 
         .pamflet-konten {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            min-height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center;
             margin-bottom: 25px; 
         }
 
-        /* --- PERBAIKAN: Turunkan agar tidak tertutup bunga --- */
-        .pamflet-konten .sub-judul {
-            margin-top: 60px;
-            position: relative;
-            z-index: 15;
-        }
-
+        .pamflet-konten .sub-judul { margin-top: 60px; position: relative; z-index: 15; }
         .judul-bagian { font-family: 'Great Vibes', cursive; font-size: 36px; color: var(--gold); margin-bottom: 20px; }
         hr.hias { border: 0; border-top: 1px solid var(--gold); width: 60px; margin: 25px auto; }
 
-        .teks-arab {
-            font-family: 'Amiri', serif;
-            font-size: 24px;
-            color: var(--dark);
-            margin: 15px 0 10px 0;
-            font-weight: normal;
-        }
+        .teks-arab { font-family: 'Amiri', serif; font-size: 24px; color: var(--dark); margin: 15px 0 10px 0; font-weight: normal; }
 
         .kotak-tamu {
-            margin: 30px 0;
-            padding: 20px;
-            border: 1px solid var(--gold);
-            border-radius: 10px;
-            width: auto;
-            position: relative;
-            z-index: 15;
+            margin: 30px 0; padding: 20px; border: 1px solid var(--gold);
+            border-radius: 10px; width: auto; position: relative; z-index: 15;
         }
         .kotak-tamu p { margin: 0; font-size: 11px; color: #999; text-transform: uppercase; line-height: 1.5; }
         .kotak-tamu span { display: block; font-size: 18px; font-weight: bold; color: var(--dark); margin-top: 8px; }
 
         /* --- STYLE BARU UNTUK HIMBAUAN TAMU --- */
         .himbauan-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 15;
-            width: 100%;
-            margin-top: 15px;
+            display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+            position: relative; z-index: 15; width: 100%; margin-top: 15px;
         }
-        .himbauan-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 90px;
-            text-align: center;
-        }
+        .himbauan-item { display: flex; flex-direction: column; align-items: center; width: 90px; text-align: center; }
         .himbauan-icon {
-            width: 65px;
-            height: 65px;
-            background-color: #e2e7d8;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 30px;
-            margin-bottom: 15px;
-            border: 2px solid var(--gold);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 65px; height: 65px; background-color: #e2e7d8; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center; font-size: 30px;
+            margin-bottom: 15px; border: 2px solid var(--gold); box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         .himbauan-item p {
-            font-size: 11px;
-            font-weight: bold;
-            color: var(--dark);
-            margin: 0;
-            line-height: 1.4;
-            background-color: white;
-            padding: 5px 8px;
-            border-radius: 15px;
-            border: 1px solid #f2e7d3;
+            font-size: 11px; font-weight: bold; color: var(--dark); margin: 0;
+            line-height: 1.4; background-color: white; padding: 5px 8px;
+            border-radius: 15px; border: 1px solid #f2e7d3;
         }
 
         .map-container { 
-            width: 85%; 
-            max-width: 400px;
-            height: 250px; 
-            margin: 20px auto; 
-            border-radius: 10px; 
-            overflow: hidden; 
-            border: 2px solid #f2e7d3; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 15; 
+            width: 85%; max-width: 400px; height: 250px; margin: 20px auto; 
+            border-radius: 10px; overflow: hidden; border: 2px solid #f2e7d3; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); position: relative; z-index: 15; 
         }
 
         .rekening-box {
-            border: 1px dashed var(--gold); 
-            padding: 20px; border-radius: 10px; 
-            margin-bottom: 15px; width: 80%;
-            position: relative;
-            z-index: 15;
+            border: 1px dashed var(--gold); padding: 20px; border-radius: 10px; 
+            margin-bottom: 15px; width: 80%; position: relative; z-index: 15;
             background: rgba(255, 255, 255, 0.7);
         }
 
@@ -362,6 +247,37 @@
             transition: background-color 0.3s ease;
         }
         #btn-audio.paused { background-color: #999; }
+
+        /* =========================================
+           --- STYLE BUKU TAMU / WEDDING WISH ---
+           ========================================= */
+        .wish-box {
+            background-color: rgba(255, 255, 255, 0.8); border: 1px solid var(--gold);
+            border-radius: 10px; padding: 15px; margin-bottom: 12px; text-align: left;
+            position: relative; z-index: 15; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .wish-box h4 { margin: 0 0 5px 0; font-size: 14px; color: var(--dark); font-weight: bold; }
+        .wish-box p { margin: 0; font-size: 12px; color: #555; line-height: 1.5; }
+        
+        .wish-form-container {
+            width: 85%; max-width: 400px; margin: 0 auto;
+            position: relative; z-index: 15;
+        }
+        .wish-input {
+            width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid var(--gold);
+            border-radius: 8px; font-family: 'Montserrat', sans-serif; font-size: 13px;
+            box-sizing: border-box; background-color: #fff;
+        }
+        .wish-input:focus { outline: none; border-color: var(--dark); }
+        
+        .wish-list-container {
+            width: 85%; max-width: 400px; margin: 25px auto 0;
+            max-height: 300px; overflow-y: auto; padding-right: 5px;
+            position: relative; z-index: 15;
+        }
+        .wish-list-container::-webkit-scrollbar { width: 6px; }
+        .wish-list-container::-webkit-scrollbar-track { background: #fdfaf0; }
+        .wish-list-container::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
     </style>
 </head>
 <body>
@@ -521,6 +437,32 @@
             </div>
         </div>
 
+        <!-- =====================================
+             BAGIAN BARU: WEDDING WISH / BUKU TAMU 
+             ===================================== -->
+        <div class="pamflet pamflet-konten" data-aos="fade-up" style="min-height: auto; padding: 60px 25px;">
+            <img src="bunga.png" class="bunga-kiri-bawah" alt="">
+            <img src="bunga.png" class="bunga-kanan-atas" alt="">
+
+            <div class="sub-judul">WEDDING WISH</div>
+            <h2 class="judul-bagian">Buku Tamu</h2>
+            <p style="font-size: 13px; color: #777; margin-bottom: 25px; position: relative; z-index: 15;">Kirimkan doa dan harapan terbaik untuk kami.</p>
+
+            <div class="wish-form-container">
+                <form id="wishForm" name="submit-to-google-sheet">
+                    <!-- Pastikan name attribute sama dengan nama kolom (case sensitive jika diperlukan oleh GS) -->
+                    <input type="text" name="nama" class="wish-input" placeholder="Nama Anda" required>
+                    <textarea name="ucapan" class="wish-input" placeholder="Tulis ucapan & doa..." rows="4" required></textarea>
+                    <button type="submit" id="btnSubmitWish" class="btn-aksi" style="width: 100%;">KIRIM UCAPAN</button>
+                </form>
+                <p id="statusPesan" style="display: none; font-size: 12px; margin-top: 15px; font-weight: bold;"></p>
+            </div>
+
+            <div class="wish-list-container" id="daftarUcapan">
+                <p style="text-align: center; font-size: 12px; color: #777;">Memuat ucapan teman-teman...</p>
+            </div>
+        </div>
+
         
         <div class="pamflet pamflet-konten" data-aos="fade-up">
             <img src="bunga.png" class="bunga-kiri-bawah" alt="">
@@ -595,6 +537,9 @@
                 
                 window.scrollTo(0,0);
                 AOS.refresh();
+                
+                // Load pesan ucapan setelah undangan dibuka
+                loadWishes(); 
             }, 600);
         }
 
@@ -616,6 +561,86 @@
             alert("Nomor rekening disalin!");
         }
 
+        // ==========================================
+        // SCRIPT BUKU TAMU / WEDDING WISH (Kirim & Ambil)
+        // ==========================================
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwVu3VyJD95Zpa49BIcWMIOMBG08BXCT42WOp_yUSyca4g7SBQJ876S4HQ4Mq9qm83WsQ/exec';
+        const formWish = document.forms['submit-to-google-sheet'];
+        const btnSubmitWish = document.getElementById('btnSubmitWish');
+        const statusPesan = document.getElementById('statusPesan');
+        const daftarUcapan = document.getElementById('daftarUcapan');
+
+        // Fungsi Load / Menampilkan Data Ucapan
+        function loadWishes() {
+            fetch(scriptURL)
+                .then(response => response.json())
+                .then(data => {
+                    daftarUcapan.innerHTML = ''; 
+                    
+                    if (data && data.length > 0) {
+                        // Jika ingin menampilkan data terbaru di paling atas, gunakan .reverse()
+                        data.reverse().forEach(item => {
+                            // Penyesuaian fleksibilitas jika output array atau object
+                            let namaTamu = item.nama || item.Nama || item[0];
+                            let ucapanTamu = item.ucapan || item.Ucapan || item[1];
+                            
+                            // Hindari merender nama header excel (jika GS mengembalikan baris pertama)
+                            if(namaTamu && namaTamu.toLowerCase() === 'nama') return;
+
+                            if (namaTamu && ucapanTamu) {
+                                let wishBox = document.createElement('div');
+                                wishBox.className = 'wish-box';
+                                wishBox.innerHTML = `<h4>${namaTamu}</h4><p>${ucapanTamu}</p>`;
+                                daftarUcapan.appendChild(wishBox);
+                            }
+                        });
+                    } 
+                    
+                    if (daftarUcapan.innerHTML === '') {
+                        daftarUcapan.innerHTML = '<p style="text-align: center; font-size: 12px; color: #777;">Jadilah yang pertama memberikan ucapan & doa.</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error memuat ucapan:', error);
+                    daftarUcapan.innerHTML = '<p style="text-align: center; font-size: 12px; color: red;">Belum dapat memuat daftar ucapan.</p>';
+                });
+        }
+
+        // Fungsi Submit Form
+        if(formWish) {
+            formWish.addEventListener('submit', e => {
+                e.preventDefault();
+                btnSubmitWish.innerText = 'MENGIRIM...';
+                btnSubmitWish.disabled = true;
+                
+                fetch(scriptURL, { method: 'POST', body: new FormData(formWish)})
+                    .then(response => {
+                        btnSubmitWish.innerText = 'KIRIM UCAPAN';
+                        btnSubmitWish.disabled = false;
+                        statusPesan.style.display = 'block';
+                        statusPesan.style.color = 'green';
+                        statusPesan.innerText = 'Terima kasih atas ucapan & doanya!';
+                        formWish.reset();
+                        
+                        // Memuat ulang data setelah berhasil submit
+                        loadWishes(); 
+                        
+                        // Hilangkan notif setelah 4 detik
+                        setTimeout(() => { statusPesan.style.display = 'none'; }, 4000);
+                    })
+                    .catch(error => {
+                        btnSubmitWish.innerText = 'KIRIM UCAPAN';
+                        btnSubmitWish.disabled = false;
+                        statusPesan.style.display = 'block';
+                        statusPesan.style.color = 'red';
+                        statusPesan.innerText = 'Gagal mengirim ucapan. Silakan coba lagi.';
+                    });
+            });
+        }
+
+        // ==========================================
+        // COUNTDOWN SCRIPT
+        // ==========================================
         const countDownDate = new Date("Jul 5, 2026 09:00:00").getTime();
 
         const x = setInterval(function() {
