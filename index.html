@@ -256,6 +256,15 @@
             z-index: 15; 
         }
 
+        .rekening-box {
+            border: 1px dashed var(--gold); 
+            padding: 20px; border-radius: 10px; 
+            margin-bottom: 15px; width: 80%;
+            position: relative;
+            z-index: 15;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
         .cd-container {
             display: flex; justify-content: center; gap: 12px; margin: 25px 0;
             position: relative; z-index: 15;
@@ -424,13 +433,29 @@
             <img src="bunga.png" class="bunga-kiri-bawah" alt="">
             <img src="bunga.png" class="bunga-kanan-atas" alt="">
 
-            <h2 class="judul-bagian">Terima Kasih</h2>
-            
-            <div style="background: rgba(253, 250, 240, 0.9); padding: 20px; border-radius: 10px; font-size: 13px; font-style: italic; margin-bottom: 25px; border-left: 4px solid var(--gold); text-align: left; width: 80%; position: relative; z-index: 15;">
+            <h2 class="judul-bagian">Tanda Kasih</h2>
+
+            <div class="rekening-box">
+                <p><strong>Bank BSI</strong><br><span id="norek-bsi-bhetri">7278966318</span><br>a.n Bhetri</p>
+                <button onclick="salinTeks('norek-bsi-bhetri')" style="cursor:pointer; background:none; border: 1px solid var(--gold); font-size: 11px; padding: 8px 15px; border-radius: 5px;">SALIN REKENING</button>
+            </div>
+
+            <div class="rekening-box">
+                <p><strong>Bank BSI</strong><br><span id="norek-bsi-ryu">7494411940</span><br>a.n Ryu River Saputra</p>
+                <button onclick="salinTeks('norek-bsi-ryu')" style="cursor:pointer; background:none; border: 1px solid var(--gold); font-size: 11px; padding: 8px 15px; border-radius: 5px;">SALIN REKENING</button>
+            </div>
+
+            <div style="background: rgba(253, 250, 240, 0.9); padding: 20px; border-radius: 10px; font-size: 13px; font-style: italic; margin-top: 15px; margin-bottom: 25px; border-left: 4px solid var(--gold); text-align: left; width: 80%; position: relative; z-index: 15;">
                 "Bārakallāhu laka, wa bāraka ‘alaika, wa jama‘a bainakumā fī khair."<br>
                 <small>(Semoga Allah memberkahimu di waktu bahagia dan memberkahimu di waktu susah, serta semoga Allah mempersatukan kalian berdua dalam kebaikan.) - HR. Abu Daud</small>
             </div>
+        </div>
 
+        <div class="pamflet pamflet-konten" data-aos="fade-up">
+            <img src="bunga.png" class="bunga-kiri-bawah" alt="">
+            <img src="bunga.png" class="bunga-kanan-atas" alt="">
+
+            <h2 class="judul-bagian">Terima Kasih</h2>
             <p style="font-size: 13px; line-height: 1.8; padding: 0 20px; margin-bottom: 20px; position: relative; z-index: 15;">
                 "Tiada yang dapat kami ungkapkan selain rasa terima kasih dari hati yang tulus Apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a restu kepada kami."
             </p>
@@ -490,6 +515,12 @@
                 btnAudio.innerText = "🔇";
                 btnAudio.classList.add("paused");
             }
+        }
+
+        function salinTeks(id) {
+            const text = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text);
+            alert("Nomor rekening disalin!");
         }
 
         const countDownDate = new Date("Jul 5, 2026 09:00:00").getTime();
